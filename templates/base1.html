@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+         <meta charset="UTF-8">
+         <meta name="viewport" content="prediction,House Price Prediction">
+         <title>House Price Prediction</title>
+    </head>
+
+<style>
+      input[type=text], select {
+          width: 80%;
+          padding: 12px 20px;
+          margin: 8px 0;
+          display: inline-block;
+          border-radius: 4px;
+          box-sizing: border-box;
+          font-weight: bolder; 
+         }
+
+        input[type = submit] {
+            width: 90%;
+            background-color: rgb(114, 163, 59);
+            color:black;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border:5px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 20px;
+            font-weight: bolder;
+        }
+
+        input[type = submit]:hover{
+            background-color:rgb(119, 108, 108);
+        }
+        form{
+
+            border-radius: 10px;
+            padding-top: 5%;
+            font-weight: bolder;
+        
+        }
+        div{
+            border-radius: 5px;
+            margin-left: 35%;
+            width: 30%;
+            }
+        h1{
+            color:white;
+            font-size: 50px;
+            font-weight: bolder;
+            border: transparent;
+            }
+        h2{
+            color:white;
+            font-size: 35px;
+            font-weight: bolder;
+            border: transparent;
+            }
+        h3{
+            color: whitesmoke;
+            font-size: 60px;
+            font-weight: bolder;
+        }
+        body{
+            background-image: url("static/img/1.jpg");
+            background-repeat: no-repeat;
+            background-size:cover;
+            text-align:center;
+            padding: 0px;
+            }
+
+</style>
+    <body>
+        <h1>HOUSE PRICE PREDICTION</h1>
+        <h2>by Shankar Wagh</h2>
+        <div>
+        <form action="{{ url_for('predict') }}" method="post" style="background-color: aliceblue">
+
+        <label for = "area">Total Area of House(sqrtft)</label><br>
+        <input type = "text" id="area" name="area" placeholder="eg. 1000" required="required"><br>
+
+        <label for = "rooms">Rooms Available</label><br>
+        <input type = "text" id="rooms" name="rooms" placeholder="eg. 1" required="required"><br>
+
+        <label for = "bathroom">Bathroom</label><br>
+        <input type = "text" id="bathroom" name="bathroom" placeholder="eg. 1" required="required"><br>
+
+        <label for = "floors">Floors</label><br>
+        <input type = "text" id="floors" name="floors" placeholder="eg. 1" required="required"><br>
+
+        <label for="driveway">Driveway</label><br>
+        <select id ="driveway" name="driveway">
+            <option value="0">YES</option>
+            <option value="1">NO</option>
+        </select><br>
+
+        <label for="game_room">Gameroom</label><br>
+        <select id="game_room" name="game_room" required = "required">
+            <option value="1">YES</option>
+            <option value ='0'>NO</option>
+        </select><br>
+
+        <label for="cellar">Ground Room Available</label><br>
+        <select id="cellar" name="cellar" required = "required">
+            <option value ='1'>YES</option>
+            <option value="0">NO</option>
+        </select><br>
+
+        <label for="gas">Gas Available</label><br>
+        <select id="gas" name="gas" required = "required">
+            <option value ='1'>YES</option>
+            <option value="0">NO</option>
+        </select><br>
+
+        <label for="air">Fresh Air Available</label><br>
+        <select id="air" name="air" required = "required">
+            <option value ='1'>YES</option>
+            <option value="0">NO</option>
+        </select><br>
+
+        <label for="garage">Garage</label><br>
+        <select id="garage" name="garage" required = "required">
+            <option value ='1'>YES</option>
+            <option value="0">NO</option>
+            <option value="2">Working</option>
+        </select><br>
+
+        <label for="situation">House Situation</label><br>
+        <select id="situation" name="situation" required = "required">
+            <option value ='1'>GOOD</option>
+            <option value="0">BEST</option>
+        </select><br>
+
+
+        <input type="submit" value="Calculate Price of House"box-sizing=40px>
+        </form>
+        </div>
+
+        <h3> {{ prediction_text }}</h3>
+
+
+    </body>
+</html>
