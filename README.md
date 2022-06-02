@@ -11,9 +11,6 @@
   * [Bugs & Logs](#bugs--logs)
   * [Contributors](#contributors)
 
-## Demo
-Link: [https://agricultural-crop-selector.herokuapp.com/](https://agricultural-crop-selector.herokuapp.com/)
-
 
 ## Problem Statement
 The goal of this statistical analysis is to help us understand the relationship between house features and how these variables are used to predict house price.
